@@ -17,7 +17,7 @@ namespace Currency.API.Tests
             var currencyQuotes = new List<string>() { "USD", "AUD", "CAD", "PLN", "MXN" };
 
             var currencyResult = await currencyLayerProvider.GetCurrencyValues(currencySource, currencyQuotes);
-            Console.WriteLine(currencyResult);
+            // TODO: Realizar as validações do teste
         }
 
         [Fact]

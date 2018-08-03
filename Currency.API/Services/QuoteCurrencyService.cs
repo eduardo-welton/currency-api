@@ -10,7 +10,9 @@ namespace Currency.API.Services
     {
         private QuoteCurrencyResult ParseCurrencyLayerResult(CurrencyLayerResult currencyLayerResult)
         {
-            var result = new QuoteCurrencyResult();
+            var result = new QuoteCurrencyResult() {
+                Quotes = new List<Quote>()
+            };
             result.Source = currencyLayerResult.Source;
 
             foreach (KeyValuePair<string, double> quote in currencyLayerResult.Quotes)
@@ -27,11 +29,12 @@ namespace Currency.API.Services
 
             return result;
         }
+
         public async Task<QuoteCurrencyResult> GetQuote(string sourceCurrency, List<string> destinationCurrencies)
         {
             var currencyLayerProvider = new CurrencyLayerProvider();
             var currencyLayerResult = await currencyLayerProvider.GetCurrencyValues(sourceCurrency, destinationCurrencies);
-            var result = new QuoteCurrencyResult();
+            var result = ParseCurrencyLayerResult(currencyLayerResult);
             return result;
         }
     }
