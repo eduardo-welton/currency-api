@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Flurl.Http;
+using Currency.API.Exceptions;
 
 namespace Currency.API.Providers
 {
@@ -16,6 +17,11 @@ namespace Currency.API.Providers
 
             var apiUrl = $"http://www.apilayer.net/api/live?access_key={accessKey}&source={source}&currencies={currencies}&format=1";
             var result = await apiUrl.GetJsonAsync<CurrencyLayerResult>();
+
+            if (!result.Success)
+            {
+                throw new QuoteException(result.Error.Code, result.Error.Info);
+            }
 
             return result;
         }

@@ -8,4 +8,11 @@ public class CurrencyLayerResult
     public long Timestamp { get; set; }
     public string Source { get; set; }
     public Dictionary<string, double> Quotes { get; set; }
+
+    public CurrencyLayerError Error { get; set; }
+}
+
+public class CurrencyLayerError {
+    public int Code { get; set; }
+    public string Info { get; set; }
 }
