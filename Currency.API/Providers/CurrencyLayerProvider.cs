@@ -6,7 +6,7 @@ using Currency.API.Exceptions;
 
 namespace Currency.API.Providers
 {
-    public class CurrencyLayerProvider
+    public class CurrencyLayerProvider : IQuoteProvider
     {
         public async Task<CurrencyLayerResult> GetCurrencyValues(string currencySource, List<string> currencyQuotes)
         {

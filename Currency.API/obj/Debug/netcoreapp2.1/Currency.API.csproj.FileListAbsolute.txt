@@ -1,0 +1,14 @@
+C:\Projetos\currency-api\Currency.API\bin\Debug\netcoreapp2.1\Currency.API.deps.json
+C:\Projetos\currency-api\Currency.API\bin\Debug\netcoreapp2.1\Currency.API.runtimeconfig.json
+C:\Projetos\currency-api\Currency.API\bin\Debug\netcoreapp2.1\Currency.API.runtimeconfig.dev.json
+C:\Projetos\currency-api\Currency.API\bin\Debug\netcoreapp2.1\Currency.API.dll
+C:\Projetos\currency-api\Currency.API\bin\Debug\netcoreapp2.1\Currency.API.pdb
+C:\Projetos\currency-api\Currency.API\obj\Debug\netcoreapp2.1\Currency.API.csprojAssemblyReference.cache
+C:\Projetos\currency-api\Currency.API\obj\Debug\netcoreapp2.1\Currency.API.csproj.CoreCompileInputs.cache
+C:\Projetos\currency-api\Currency.API\obj\Debug\netcoreapp2.1\Currency.API.RazorAssemblyInfo.cache
+C:\Projetos\currency-api\Currency.API\obj\Debug\netcoreapp2.1\Currency.API.RazorAssemblyInfo.cs
+C:\Projetos\currency-api\Currency.API\obj\Debug\netcoreapp2.1\Currency.API.AssemblyInfoInputs.cache
+C:\Projetos\currency-api\Currency.API\obj\Debug\netcoreapp2.1\Currency.API.AssemblyInfo.cs
+C:\Projetos\currency-api\Currency.API\obj\Debug\netcoreapp2.1\Currency.API.RazorTargetAssemblyInfo.cache
+C:\Projetos\currency-api\Currency.API\obj\Debug\netcoreapp2.1\Currency.API.dll
+C:\Projetos\currency-api\Currency.API\obj\Debug\netcoreapp2.1\Currency.API.pdb

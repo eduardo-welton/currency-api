@@ -12,6 +12,12 @@ namespace Currency.API.Controllers
     [ApiController]
     public class QuoteController : ControllerBase
     {
+        private readonly IQuoteCurrencyService quoteCurrencyService;
+
+        public QuoteController(IQuoteCurrencyService quoteCurrencyService) {
+            this.quoteCurrencyService = quoteCurrencyService;
+        }
+
         [HttpGet("{sourceCurrency}/{destinationCurrency}")]
         public async Task<QuoteCurrencyResult> Get(string sourceCurrency, string destinationCurrency)
         {

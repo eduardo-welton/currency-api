@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Currency.API.Providers;
+using Currency.API.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -26,6 +28,8 @@ namespace Currency.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddSingleton<IQuoteCurrencyService, QuoteCurrencyService>();
+            services.AddSingleton<IQuoteProvider, CurrencyLayerProvider>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

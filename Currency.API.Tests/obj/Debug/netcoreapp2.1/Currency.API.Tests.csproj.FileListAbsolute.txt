@@ -1,0 +1,17 @@
+C:\Projetos\currency-api\Currency.API.Tests\bin\Debug\netcoreapp2.1\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+C:\Projetos\currency-api\Currency.API.Tests\bin\Debug\netcoreapp2.1\xunit.runner.reporters.netcoreapp10.dll
+C:\Projetos\currency-api\Currency.API.Tests\bin\Debug\netcoreapp2.1\xunit.runner.utility.netcoreapp10.dll
+C:\Projetos\currency-api\Currency.API.Tests\bin\Debug\netcoreapp2.1\Currency.API.Tests.deps.json
+C:\Projetos\currency-api\Currency.API.Tests\bin\Debug\netcoreapp2.1\Currency.API.Tests.runtimeconfig.json
+C:\Projetos\currency-api\Currency.API.Tests\bin\Debug\netcoreapp2.1\Currency.API.Tests.runtimeconfig.dev.json
+C:\Projetos\currency-api\Currency.API.Tests\bin\Debug\netcoreapp2.1\Currency.API.Tests.dll
+C:\Projetos\currency-api\Currency.API.Tests\bin\Debug\netcoreapp2.1\Currency.API.Tests.pdb
+C:\Projetos\currency-api\Currency.API.Tests\bin\Debug\netcoreapp2.1\Currency.API.dll
+C:\Projetos\currency-api\Currency.API.Tests\bin\Debug\netcoreapp2.1\Currency.API.pdb
+C:\Projetos\currency-api\Currency.API.Tests\obj\Debug\netcoreapp2.1\Currency.API.Tests.csprojAssemblyReference.cache
+C:\Projetos\currency-api\Currency.API.Tests\obj\Debug\netcoreapp2.1\Currency.API.Tests.csproj.CoreCompileInputs.cache
+C:\Projetos\currency-api\Currency.API.Tests\obj\Debug\netcoreapp2.1\Currency.API.Tests.AssemblyInfoInputs.cache
+C:\Projetos\currency-api\Currency.API.Tests\obj\Debug\netcoreapp2.1\Currency.API.Tests.AssemblyInfo.cs
+C:\Projetos\currency-api\Currency.API.Tests\obj\Debug\netcoreapp2.1\Currency.API.Tests.csproj.CopyComplete
+C:\Projetos\currency-api\Currency.API.Tests\obj\Debug\netcoreapp2.1\Currency.API.Tests.dll
+C:\Projetos\currency-api\Currency.API.Tests\obj\Debug\netcoreapp2.1\Currency.API.Tests.pdb

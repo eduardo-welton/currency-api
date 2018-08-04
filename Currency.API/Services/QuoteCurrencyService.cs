@@ -6,7 +6,7 @@ using Currency.API.Providers;
 
 namespace Currency.API.Services
 {
-    public class QuoteCurrencyService
+    public class QuoteCurrencyService : IQuoteCurrencyService
     {
         private QuoteCurrencyResult ParseCurrencyLayerResult(CurrencyLayerResult currencyLayerResult)
         {
