@@ -1,5 +1,3 @@
-using System;
-
 namespace Currency.API.Models
 {
     public class Quote

@@ -1,24 +1,26 @@
-using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Currency.API.Controllers;
 using Currency.API.Exceptions;
+using Currency.API.Providers;
 using Xunit;
 
 namespace Currency.API.Tests
 {
+    /*
+     * ATENÇÃO: ESSA CLASSE TEM O OBJETIVO DE TESTAR O RETORNO DA API DA CURRENCYLAYER, SENDO ASSIM, 
+     *          PROPOSITALMENTE NÃO ESTAMOS UTILIZANDO MOCK PARA OS TESTES ABAIXO
+    */
     public class CurrencyLayerProviderTest
     {
         [Fact]
         public async Task ConvertToBRL()
         {
-            var currencyLayerProvider = new Providers.CurrencyLayerProvider();
+            var currencyLayerProvider = new CurrencyLayerProvider();
 
-            var currencySource = "GBP";
+            var currencySource = "BRL";
             var currencyQuotes = new List<string>() { "USD", "AUD", "CAD", "PLN", "MXN" };
-
             var currencyResult = await currencyLayerProvider.GetCurrencyValues(currencySource, currencyQuotes);
-
+            
             Assert.True(currencyResult.Success);
             Assert.Equal(currencySource, currencyResult.Source);
             Assert.Equal(currencyQuotes.Count, currencyResult.Quotes.Count);
@@ -33,7 +35,7 @@ namespace Currency.API.Tests
         [Fact]
         public async Task UnknownCurrencySource()
         {
-            var currencyLayerProvider = new Providers.CurrencyLayerProvider();
+            var currencyLayerProvider = new CurrencyLayerProvider();
 
             var wrongCurrencySource = "EDU";
             var currencyQuotes = new List<string>() { "USD", "AUD", "CAD", "PLN", "MXN" };
@@ -43,11 +45,16 @@ namespace Currency.API.Tests
         }
 
         [Fact]
-        public async Task UnknownCurrencySourceOnController()
+        public async Task UnknownCurrencyTarget()
         {
-            var controller = new QuoteController(null);
-            var result = await controller.Get("BRL", "USD");
-            Console.WriteLine(result);
+            var currencyLayerProvider = new CurrencyLayerProvider();
+
+            var currencySource = "BRL";
+            var currencyQuotes = new List<string>() { "BlaBla" };
+
+            QuoteException quoteException = await Assert.ThrowsAsync<QuoteException>(() => currencyLayerProvider.GetCurrencyValues(currencySource, currencyQuotes));
+            Assert.Equal(202, quoteException.ErrorCode);
         }
+
     }
 }

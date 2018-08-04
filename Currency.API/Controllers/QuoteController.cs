@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using Currency.API.Models;
 using Currency.API.Services;
@@ -14,20 +13,29 @@ namespace Currency.API.Controllers
     {
         private readonly IQuoteCurrencyService quoteCurrencyService;
 
-        public QuoteController(IQuoteCurrencyService quoteCurrencyService) {
+        public QuoteController(IQuoteCurrencyService quoteCurrencyService)
+        {
             this.quoteCurrencyService = quoteCurrencyService;
         }
 
         [HttpGet("{sourceCurrency}/{destinationCurrency}")]
-        public async Task<QuoteCurrencyResult> Get(string sourceCurrency, string destinationCurrency)
+        [ProducesResponseType(typeof(QuoteCurrencyResult), 200)]
+        [ProducesResponseType(typeof(Exception), 500)]
+        public async Task<IActionResult> GetQuotes(string sourceCurrency, string destinationCurrency)
         {
-            var quoteCurrencyService = new QuoteCurrencyService();
             var destionationCurrencyList = new List<string>() {
                 destinationCurrency
             };
 
-            QuoteCurrencyResult result = await quoteCurrencyService.GetQuote(sourceCurrency, destionationCurrencyList);
-            return result;
+            try
+            {
+                QuoteCurrencyResult result = await quoteCurrencyService.GetQuote(sourceCurrency, destionationCurrencyList);
+                return Ok(result);
+            }
+            catch (Exception exception)
+            {
+                return StatusCode(500, exception);
+            }
         }
     }
 }
