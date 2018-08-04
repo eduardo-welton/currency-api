@@ -23,6 +23,15 @@ namespace Currency.API
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddSingleton<IQuoteCurrencyService, QuoteCurrencyService>();
             services.AddSingleton<IQuoteProvider, CurrencyLayerProvider>();
+            services.AddCors(options =>
+             {
+                 options.AddPolicy("CorsPolicy",
+                 builder => builder.AllowAnyOrigin()
+                                   .AllowAnyMethod()
+                                   .AllowAnyHeader()
+                                   .AllowCredentials()
+                 );
+             });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -36,6 +45,9 @@ namespace Currency.API
             {
                 app.UseHsts();
             }
+
+            // global policy - assign here or on each controller
+            app.UseCors("CorsPolicy");
 
             //app.UseHttpsRedirection();
             app.UseMvc();
